@@ -1,0 +1,52 @@
+﻿<html>
+<head>
+    <title>All Addresses</title>
+</head>
+<body>
+    <p>Adresses</p>
+
+    <div class="row pull-right">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-3"></div>
+        <div class="col-xs-3"></div>
+
+        <div class="input-group">
+            <input type="text" class="form-control" ng-model="searchvalue" placeholder="Postalcode or Streetname">
+            <div class="input-group-btn">
+                <button class="btn btn-default" ng-click="searchAddress(searchvalue)">
+                    Go
+                    <i class=" glyphicon glyphicon-search">
+                    </i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 customer" ng-repeat="address in address">
+
+        <strong>{{address.postalCode}}</strong>
+
+        <div class="table-responsive">
+            <table class="table table-condensed shortMargin">
+                <tr>
+                    <td class="shortPadding">Streetname:</td>
+                    <td class="shortPadding"><i>{{address.streetName}}</i></td>
+                </tr>
+                <tr>
+                    <td class="shortPadding">Street Number:</td>
+                    <td class="shortPadding"><i>{{address.streetNumber}}</i></td>
+                </tr>
+                <tr>
+                    <td class="shortPadding">City:</td>
+                    <td class="shortPadding"><i>{{address.city}}</i></td>
+                </tr>
+            </table>
+        </div>
+        <div class="pull-right">
+            <button class="btn btn-primary btn-xs" ng-click="openEditDialog(address)">Edit <i class="fa fa-pencil pull-right"></i></button>
+
+            <button class="btn btn-primary btn-xs" ng-click="openShowCustomer(address)">Show Customer <i class="fa fa-pencil pull-right"></i></button>
+        </div>
+
+    </div>
+</body>
+</html>

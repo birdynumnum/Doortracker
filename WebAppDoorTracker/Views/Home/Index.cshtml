@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-route.min.js"></script>
+<script src="~/Scripts/angular-resource.js"></script>
+<script src="~/Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+<script src="~/Scripts/toastr.min.js"></script>
+
+<script src="~/Scripts/App/DoorTrackerApp.js"></script>
+<script src="~/Scripts/spa/Layout/customPager.directive.js"></script>
+
+@*Doors*@
+<script src="~/Scripts/spa/door/doorCtlr.js"></script>
+<script src="~/Scripts/spa/door/doorEditCtrl.js"></script>
+<script src="~/Scripts/spa/customer/customerDoorsCtrl.js"></script>
+<script src="~/Scripts/spa/door/bearerTokenContainer.js"></script>
+
+@*Customer*@
+<script src="~/Scripts/spa/customer/customerCtlr.js"></script>
+<script src="~/Scripts/spa/customer/customerEditCtrl.js"></script>
+<script src="~/Scripts/spa/customer/customerRegCtrl.js"></script>
+
+@*Address*@
+<script src="~/Scripts/spa/address/addressCtlr.js"></script>
+<script src="~/Scripts/spa/address/addressEditCtrl.js"></script>
+<script src="~/Scripts/spa/address/addressRegCtrl.js"></script>
+<script src="~/Scripts/spa/address/addressCustomerCtrl.js"></script>
+
+@*Home*@
+<script src="~/Scripts/spa/home/homeCtlr.js"></script>
+
+<script src="~/Scripts/services/notificationService.js"></script>
+<script src="~/Scripts/services/apiService.js"></script>
+
+
+@*oidc-token-manager*@
+<script src="~/Scripts/oidc-token-manager.js"></script>
+
+<div class="jumbotron">
+    <div class="row" ng-app="DoorTrackerApp">
+        <div class="col-md-4">
+            <p>
+                Door Tracker
+            </p>
+        </div>
+        <div>
+            <div class="panel">
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+</div>

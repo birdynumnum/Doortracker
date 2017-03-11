@@ -1,0 +1,61 @@
+﻿
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Edit {{EditedCustomer.firstName}} {{EditedCustomer.lastName}}
+    </div>
+    <div class="panel-body">
+        <form role="form" novalidate angular-validator name="addCustomerForm" angular-validator-submit="Register()">
+            <div class="">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label class="control-label" for="firstName">First Name</label>
+                            <input type="text" class="form-control" ng-model="EditedCustomer.firstName" name="firstName" id="firstName" placeholder="First Name"
+                                   validate-on="blur" required required-message="'First Name is required'">
+                        </div>
+                        <div class="col-sm-6 selectContainer">
+                            <label class="control-label" for="lastName">Last Name</label>
+                            <input type="text" class="form-control" ng-model="EditedCustomer.lastName" name="lastName" id="lastName" placeholder="Last Name"
+                                   validate-on="blur" required required-message="'Last Name is required'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label class="control-label" for="email">Email Address</label>
+                            <input type="email" class="form-control" ng-model="EditedCustomer.eMail" id="email" name="email" placeholder="Email address"
+                                   validate-on="blur" required required-message="'Email is required'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label class="control-label" for="mobilePhone">Mobile</label>
+                            <input type="text" ng-model="EditedCustomer.mobileNumber" class="form-control" id="mobilePhone" name="mobilePhone" placeholder="Mobile phone"
+                                   validate-on="blur" required required-message="'Mobile phone is required'">
+                        </div>
+                        <div class="col-xs-6 selectContainer">
+                            <label class="control-label" for="dateOfRegistration">Date of Registration</label>
+                            <p class="input-group">
+                                <input type="text" class="form-control" name="dateOfRegistration" uib-datepicker-popup="{{format}}" ng-model="EditedCustomer.registrationDate" is-open="datepicker.opened"
+                                       datepicker-options="dateOptions" ng-required="true" datepicker-append-to-body="true" close-text="Close"
+                                       validate-on="blur" required required-message="'Date of Registration is required'" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="openDatePicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer clearfix">
+        <div class="pull-right">
+            <button type="button" class="btn btn-danger" ng-click="cancelEdit()">Cancel</button>
+            <button type="button" class="btn btn-primary" ng-click="updateCustomer()">Update</button>
+        </div>
+    </div>
+</div>

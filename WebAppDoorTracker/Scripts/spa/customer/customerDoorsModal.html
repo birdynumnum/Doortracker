@@ -1,0 +1,31 @@
+﻿
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Doors
+    </div>
+    <div class="panel-body">
+        <form role="form" novalidate angular-validator name="CustomerDoorsForm">
+            <div class="col-xs-12 col-sm-6 customer" ng-repeat="door in doors">
+                <div class="table-responsive">
+                    <table class="table table-condensed shortMargin">
+                        <tr>
+                            <td class="shortPadding">Make:</td>
+                            <td class="shortPadding"><i>{{door.make}}</i></td>
+                        </tr>
+                        <tr>
+                            <td class="shortPadding">Model:</td>
+                            <td class="shortPadding"><i>{{door.model}}</i></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer clearfix">
+        <div class="pull-right">
+            <button type="button" class="btn btn-danger" ng-click="cancel()">Close</button>
+        </div>
+    </div>
+</div>
+
+

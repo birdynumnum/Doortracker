@@ -1,0 +1,42 @@
+﻿
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Edit {{EditedAddress.postalCode}} {{EditedAddress.streetName}}
+    </div>
+    <div class="panel-body">
+        <form role="form" novalidate angular-validator name="editAddressModalForm" angular-validator-submit="Register()">
+            <div class="">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label class="control-label" for="streetName">Street Name</label>
+                            <input type="text" class="form-control" ng-model="EditedAddress.streetName" name="streetName" id="streetName" placeholder="streetName"
+                                   validate-on="blur" required required-message="'Street Name is required'">
+                        </div>
+                        <div class="col-sm-6 selectContainer">
+                            <label class="control-label" for="streetNumber">Street Number</label>
+                            <input type="text" class="form-control" ng-model="EditedAddress.streetNumber" name="streetNumber" id="streetNumber" placeholder="StreetNumber"
+                                   validate-on="blur" required required-message="'Street Number is required'">
+                        </div>
+                        <div class="col-sm-6 selectContainer">
+                            <label class="control-label" for="postalCode">Postal Code</label>
+                            <input type="text" class="form-control" ng-model="EditedAddress.postalCode" name="postalCode" id="postalCode" placeholder="postalCode"
+                                   validate-on="blur" required required-message="'Postal Code is required'">
+                        </div>
+                        <div class="col-sm-6 selectContainer">
+                            <label class="control-label" for="streetNumber">City</label>
+                            <input type="text" class="form-control" ng-model="EditedAddress.city" name="city" id="city" placeholder="city"
+                                   validate-on="blur" required required-message="'City is required'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer clearfix">
+        <div class="pull-right">
+            <button type="button" class="btn btn-danger" ng-click="cancelEdit()">Cancel</button>
+            <button type="button" class="btn btn-primary" ng-click="updateAddress(EditedAddress)">Update</button>
+        </div>
+    </div>
+</div>

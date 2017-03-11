@@ -1,0 +1,63 @@
+﻿
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Edit {{EditedDoor.make}}
+    </div>
+    <div class="panel-body">
+        <form role="form" novalidate angular-validator name="DoorForm" angular-validator-submit="Register()">
+            <div class="">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label class="control-label" for="make">Make</label>
+                            <input type="text" class="form-control" ng-model="EditedDoor.make" name="make" id="make" placeholder="Make"
+                                   validate-on="blur" required required-message="'Make is required'">
+                        </div>
+                        <div class="col-sm-6 selectContainer">
+                            <label class="control-label" for="model">Model</label>
+                            <input type="text" class="form-control" ng-model="EditedDoor.model" name="model" id="model" placeholder="model"
+                                   validate-on="blur" required required-message="'Model is required'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        
+                        <div class="col-xs-6">
+                            <label class="control-label" for="dateOfInstallation">Installation Date</label>
+                            <p class="input-group">
+                                <input type="text" class="form-control" name="dateOfInstallation" uib-datepicker-popup="{{format}}" ng-model="EditedDoor.dateOfInstallation" is-open="datepickerdoi.opened"
+                                       datepicker-options="dateOptions" ng-required="true" datepicker-append-to-body="true" close-text="Close"
+                                       validate-on="blur" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="openDatePickerInstallation($event, 'datepickerdoi')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </p>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <label class="control-label" for="dateOfRegistration">Manufacture Date</label>
+                            <p class="input-group">
+                                <input type="text" class="form-control" name="dateOfManufacture" uib-datepicker-popup="{{format}}" ng-model="EditedDoor.yearOfManufacture" is-open="datepicker.opened"
+                                       datepicker-options="dateOptions" ng-required="true" datepicker-append-to-body="true" close-text="Close"
+                                       validate-on="blur" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="openDatePicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer clearfix">
+        <div class="pull-right">
+            <button type="button" class="btn btn-danger" ng-click="cancelEdit()">Cancel</button>
+            <button type="button" class="btn btn-primary" ng-click="updateDoor(EditedDoor)">Update</button>
+        </div>
+    </div>
+</div>
+

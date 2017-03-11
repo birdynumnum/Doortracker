@@ -1,0 +1,32 @@
+﻿
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Customers
+    </div>
+    <div class="panel-body">
+        <form role="form" novalidate angular-validator name="AddressCustomerForm">
+            <div class="col-xs-12 col-sm-6 customer" ng-repeat="customer in customers">
+                <div class="table-responsive">
+                    <table class="table table-condensed shortMargin">
+                        <tr>
+                            <td class="shortPadding">Name:</td>
+                            <td class="shortPadding"><i>{{customer.lastName}}</i></td>
+                        </tr>
+                        <tr>
+                            <td class="shortPadding">Mobile:</td>
+                            <td class="shortPadding"><i>{{customer.mobileNumber}}</i></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer clearfix">
+        <div class="pull-right">
+            <button type="button" class="btn btn-danger" ng-click="cancel()">Close</button>
+        </div>
+    </div>
+</div>
+
+
+

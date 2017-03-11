@@ -1,0 +1,53 @@
+﻿<html>
+<head>
+    <title>Customer</title>
+</head>
+<body>
+    <p>Customer</p>
+
+    <div class="row pull-right">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-3"></div>
+        <div class="col-xs-3"></div>
+
+        <div class="input-group">
+            <input type="text" class="form-control" ng-model="searchvalue" placeholder="Search by Mail or Name">
+            <div class="input-group-btn">
+                <button class="btn btn-default" ng-click="searchCustomer(searchvalue)">
+                    Go
+                    <i class=" glyphicon glyphicon-search">
+                    </i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 customer" ng-repeat="customer in customers">
+
+        <strong>{{customer.firstName}}</strong>
+
+        <div class="table-responsive">
+            <table class="table table-condensed shortMargin">
+                <tr>
+                    <td class="shortPadding">Email:</td>
+                    <td class="shortPadding"><i>{{customer.eMail}}</i></td>
+                </tr>
+                <tr>
+                    <td class="shortPadding">Mobile:</td>
+                    <td class="shortPadding"><i>{{customer.mobileNumber}}</i></td>
+                </tr>
+            </table>
+        </div>
+        <div class="pull-right">
+            <button class="btn btn-primary btn-xs" ng-click="openEditDialog(customer)">Edit <i class="fa fa-pencil pull-right"></i></button>
+
+            <button class="btn btn-primary btn-xs" ng-click="showDoors(customer)">Show Doors <i class="fa fa-pencil pull-right"></i></button>
+        </div>
+
+    </div>
+    <div class="panel-footer">
+        <div class="text-center">
+            <custom-pager page="{{page}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="search(page)"></custom-pager>
+        </div>
+    </div>
+</body>
+</html>

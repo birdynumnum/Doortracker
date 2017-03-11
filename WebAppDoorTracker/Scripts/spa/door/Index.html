@@ -1,0 +1,65 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">Doors</div>
+
+
+
+    <div class="panel-body">
+
+        <div class="row pull-right">
+            <div class="col-xs-3"></div>
+            <div class="col-xs-3"></div>
+            <div class="col-xs-3"></div>
+
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="searchvalue" placeholder="Search by Model or Make">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" ng-click="searchDoor()">
+                        Go
+                        <i class=" glyphicon glyphicon-search">
+                        </i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 movie" ng-repeat="door in doors track by $index">
+
+            <div class="table-responsive">
+                <table class="table table-condensed shortMargin">
+                    <tr>
+                        <td class="shortPadding">Make:</td>
+                        <td class="shortPadding"><i><strong>{{door.make}}</strong></i></td>
+                    </tr>
+                    <tr>
+                        <td class="shortPadding">Model:</td>
+                        <td class="shortPadding"><i>{{door.model}}</i></td>
+                    </tr>
+                    <tr>
+                        <td class="shortPadding">Year of Manufacture:</td>
+                        <td class="shortPadding"><i>{{door.yearOfManufacture | date:  "dd.MM.y"}}</i></td>
+                    </tr>
+                    <tr>
+                        <td class="shortPadding">Installation Date:</td>
+                        <td class="shortPadding"><i>{{door.dateOfInstallation | date:  "dd.MM.y"}}</i></td>
+                    </tr>
+                    <tr>
+                        <td class="shortPadding">Warranty Years:</td>
+                        <td class="shortPadding"><i>{{door.noOfWarrantyYears }}</i></td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="pull-right">
+                <button class="btn btn-primary btn-xs" ng-click="openEditDoor(door)">Edit Door <i class="fa fa-pencil pull-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <div class="panel-footer">
+            <custom-pager page="{{page}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="searchDoor(page)"></custom-pager>
+        </div>
+    </div>
+</div>
+
