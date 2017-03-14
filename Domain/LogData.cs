@@ -1,10 +1,11 @@
 ﻿
+using System;
+using System.Net.Http;
 namespace Domain
 {
     public class LogData
     {
-        public string Host { get; set; }
-        public string ContentType { get; set; }
-        public string Accept { get; set; }
+        public Uri Location { get; set; }
+        public HttpMethod Method { get; set; }
     }
 }
