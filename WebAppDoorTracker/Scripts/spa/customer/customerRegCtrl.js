@@ -5,10 +5,6 @@
 
     function customersRegCtrl($scope, $location, $rootScope, apiService) {
 
-        //console.log("Registration Customer");
-
-        //$scope.registerCustomer = registerCustomer;
-
         $scope.newCustomer = {};
         $scope.Register = Register;
 
@@ -22,42 +18,10 @@
             registerCustomerFailed);
         }
 
-
-
-
         $scope.submission = {
             successMessages: ['Successfull submission will appear here.'],
             errorMessages: ['Submition errors will appear here.']
         };
-
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         function Register() {
 

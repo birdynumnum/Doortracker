@@ -19,6 +19,7 @@ namespace WebAppDoorTracker
         protected void Application_Start()
         {
             Container = new Container();
+
             Container.Configure(x =>
             {
                 x.Scan(y =>
@@ -27,6 +28,8 @@ namespace WebAppDoorTracker
                     y.AddAllTypesOf<ApiController>();
                 });
             });
+
+
 
             AreaRegistration.RegisterAllAreas();
             WebApiConfig.Register(GlobalConfiguration.Configuration);
@@ -52,6 +55,7 @@ namespace WebAppDoorTracker
             }
 
             AutoMapperMapping.Config();
+
         }
 
         protected void Application_End()

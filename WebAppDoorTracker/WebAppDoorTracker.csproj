@@ -261,6 +261,8 @@
     <Compile Include="Filters\HttpValueProviderFactory.cs" />
     <Compile Include="Infrastructure\Core\PaginationSet.cs" />
     <Compile Include="Infrastructure\IDisposable.cs" />
+    <Compile Include="Services\IJsonLoggingService.cs" />
+    <Compile Include="Services\JsonLoggingService.cs" />
     <Compile Include="ViewModels\anemicCustomerDTO.cs" />
     <Compile Include="ViewModels\anemicDoorDTO.cs" />
     <Compile Include="Controllers\MVC\AccountController.cs" />

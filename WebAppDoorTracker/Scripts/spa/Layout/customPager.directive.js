@@ -24,18 +24,8 @@
 
                 $scope.searchDoor = function (i) {
 
-                    console.log("searching door")
-                    
                     if ($scope.searchFunc) {
-
-                        console.log("funking");
-
-                        var test = i;
-
-                        console.log(i);
-
                         $scope.searchFunc({ page : i});
-                       // $scope.searchFunc({ page: i });
                     }
                 };
 
@@ -51,7 +41,6 @@
                     for (var i = start; i != end; ++i) {
                         ret.push(i);
                     }
-
                     return ret;
                 };
 

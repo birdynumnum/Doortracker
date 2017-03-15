@@ -64,19 +64,16 @@
 
         function searchDoor(page) {
 
-            console.log("page in searchdoor " +$scope.page);
-
+            page = page || 0;
             var config = {
                 params: {
-                    page: $scope.page,
+                    page: page,
                     pageSize: 4,
                     filter: $scope.filterCustomers
                 }
             };
-
-            apiService.get('api/door/search/', config, doorLoadFailed, doorLoadCompleted);
+            apiService.get('api/door/search/', config, doorLoadCompleted, doorLoadFailed);
         }
-
 
         function openEditDoor(door) {
             $scope.EditedDoor = door;
