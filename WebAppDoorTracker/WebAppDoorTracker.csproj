@@ -1135,6 +1135,7 @@
     <Content Include="Scripts\spa\customer\registerCustomer.html" />
     <Content Include="Scripts\spa\door\doorCtlr.js" />
     <Content Include="Scripts\spa\door\doorEditCtrl.js" />
+    <Content Include="Scripts\spa\door\doorRegCtrl.js" />
     <Content Include="Scripts\spa\door\editDoorModal.html" />
     <Content Include="Scripts\spa\door\Index.html" />
     <Content Include="Scripts\spa\door\registerDoor.html" />

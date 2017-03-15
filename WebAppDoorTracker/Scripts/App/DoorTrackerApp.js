@@ -19,7 +19,7 @@ function config($routeProvider, $locationProvider, $httpProvider) {
 	 })
 	 .when('/AddDoor', {
 		  templateUrl: "scripts/spa/door/registerDoor.html",
-		  controller: "doorCtrl"
+		  controller: "doorRegCtrl"
 	 })
 	 .when('/Customer', {
 		 templateUrl: "scripts/spa/customer/Index.html",
