@@ -218,7 +218,7 @@ namespace WebAppDoorTracker.Controllers.API
                     TotalCount = totalCustomers,
                     TotalPages = (int)Math.Ceiling((decimal)totalCustomers / currentPageSize),
                     Items = customersDTOs
-            };
+                };
 
                 response = request.CreateResponse<PaginationSet<CustomerDTO>>(HttpStatusCode.OK, pagedSet);
 
