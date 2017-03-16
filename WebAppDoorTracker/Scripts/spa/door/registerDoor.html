@@ -22,10 +22,10 @@
                 </div>
             </div>
            
-            <div class="form-group">
+            <div class="form-group" id=" udp1">
                 <label for="YearOfManufacture">Year Of Manufacture</label>
                 <p class="input-group">
-                    <input type="text" class="form-control" name="YearOfManufacture" datepicker-popup="{{format}}" ng-model="newDoor.YearOfManufacture" is-open="datepicker.opened" datepicker-options="dateOptions" ng-required="true" datepicker-append-to-body="true" close-text="Close"
+                    <input type="text" id="yom" class="form-control" name="YearOfManufacture" uib-datepicker-popup="{{format}}" ng-model="newDoor.YearOfManufacture" is-open="datepicker.opened" datepicker-options="dateOptions" ng-required="true" datepicker-append-to-body="true" close-text="Close"
                            validate-on="blur" required required-message="'Year of Manufacture'" />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="openDatePicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>
@@ -33,13 +33,13 @@
                 </p>
             </div>
           
-            <div class="form-group">
+            <div class="form-group" id="udp2">
                 <label for="DateOfInstallation">Date of Installation</label>
                 <p class="input-group">
-                    <input type="text" class="form-control" name="DateOfInstallation" datepicker-popup="{{format}}" ng-model="newDoor.DateOfInstallation" is-open="datepicker.opened" datepicker-options="dateOptions" ng-required="true" datepicker-append-to-body="true" close-text="Close"
+                    <input type="text" id="doi" class="form-control" name="DateOfInstallation" uib-datepicker-popup="{{format}}" ng-model="newDoor.DateOfInstallation" is-open="datepicker2.opened" datepicker-options="dateOptions" ng-required="true" datepicker-append-to-body="true" close-text="Close"
                            validate-on="blur" required required-message="'Date of Installation'" />
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="openDatePicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        <button type="button" class="btn btn-default" ng-click="openDatePickerDOI($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
                 </p>
             </div>

@@ -1,10 +1,18 @@
 ﻿(function (app) {
     'use strict';
     app.controller('doorRegCtrl', doorRegCtrl);
-    doorRegCtrl.$inject = ['$scope', '$location', '$rootScope', 'apiService'];
+    doorRegCtrl.$inject = ['$scope', '$location', '$rootScope', '$timeout', 'apiService'];
 
-    function doorRegCtrl($scope, $location, $rootScope, apiService) {
+    function doorRegCtrl($scope, $location, $rootScope, $timeout, apiService) {
         $scope.newDoor = {};
+        $scope.openDatePicker = openDatePicker;
+        $scope.openDatePickerDOI = openDatePickerDOI;
+        $scope.dateOptions = {
+            formatYear: 'yy',
+            startingDay: 1
+        };
+        $scope.datepicker = {};
+        $scope.datepicker2 = {};
 
         $scope.registerDoor = function registerDoor(newDoor) {
             apiService.post('/api/door/put', $scope.newDoor, registerDoorSucceded, registerDoorFailed);
@@ -29,6 +37,18 @@
             else
                 $scope.submission.errorMessages = response.statusText;
         }
-    }
 
+        function openDatePicker($event) {
+            $scope.datepicker.opened = true;
+            $event.preventDefault();
+            $event.stopPropagation();
+        };
+
+        function openDatePickerDOI($event) {
+            $scope.datepicker2.opened = true;
+            $event.preventDefault();
+            $event.stopPropagation();
+          
+        };
+    }
 })(angular.module('DoorTrackerApp'));
