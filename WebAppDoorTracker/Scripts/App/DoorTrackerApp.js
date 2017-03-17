@@ -18,8 +18,8 @@ function config($routeProvider, $locationProvider, $httpProvider) {
 		 controller: "doorCtrl"
 	 })
 	 .when('/AddDoor', {
-		  templateUrl: "scripts/spa/door/registerDoor.html",
-		  controller: "doorRegCtrl"
+		 templateUrl: "scripts/spa/door/registerDoor.html",
+		 controller: "doorRegCtrl"
 	 })
 	 .when('/Customer', {
 		 templateUrl: "scripts/spa/customer/Index.html",
@@ -30,9 +30,13 @@ function config($routeProvider, $locationProvider, $httpProvider) {
 		 controller: "customerRegCtrl"
 	 })
 	 .when('/Address', {
-			 templateUrl: "scripts/spa/address/Index.html",
-			 controller: "addressCtrl"
-		 })
+		 templateUrl: "scripts/spa/address/Index.html",
+		 controller: "addressCtrl"
+	 })
+	 .when('/AddAddress', {
+		  templateUrl: "scripts/spa/address/registerAddress.html",
+		  controller: "addressRegCtrl"
+	  })
 	 .otherwise({ redirectTo: '/Home' });
 
 	//$httpProvider.interceptors.push(function (Tester) {
@@ -41,7 +45,7 @@ function config($routeProvider, $locationProvider, $httpProvider) {
 
 	//    return {
 
-	
+
 	//        'request': function (config) {
 
 	//            // if it's a request to the API, we need to provide the
@@ -57,7 +61,7 @@ function config($routeProvider, $locationProvider, $httpProvider) {
 	//});
 
 
-	if(window.history && window.history.pushState){
+	if (window.history && window.history.pushState) {
 		$locationProvider.html5Mode({
 			enabled: true,
 			requireBase: false

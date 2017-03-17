@@ -2,40 +2,41 @@
 <div class="alert alert-info alert-dismissable">
     <a class="panel-close close" data-dismiss="alert">×</a>
     <i class="fa fa-user-plus fa-3x"></i>
-    Register new customer. Make sure you fill all required fields.
+    <strong>Add new Address</strong> Make sure you fill all required fields.
 </div>
 <div class="row">
-    <form role="form" novalidate angular-validator name="addCustomerForm" angular-validator-submit="Register()">
+    <form role="form" novalidate angular-validator name="addAddressForm" angular-validator-submit="Register()">
         <div class="col-sm-6">
             <div class="form-group">
-                <label for="firstName">First Name</label>
+                <label for="streetname">Street Name</label>
                 <div class="form-group">
-                    <input type="text" class="form-control" ng-model="newCustomer.FirstName" name="firstName" id="firstName" placeholder="First Name"
-                           validate-on="blur" required required-message="'First Name is required'">
+                    <input type="text" class="form-control" ng-model="newAddress.streetName" name="streetName" id="streetname" placeholder="Street Name"
+                           validate-on="blur" required required-message="'Street Name is required'">
                 </div>
             </div>
             <div class="form-group">
-                <label for="lastName">Last Name</label>
+                <label for="StreetNumber">StreetNumber</label>
                 <div class="form-group">
-                    <input type="text" class="form-control" ng-model="newCustomer.LastName" name="lastName" id="lastName" placeholder="Last Name"
-                           validate-on="blur" required required-message="'Last Name is required'">
+                    <input type="text" class="form-control" ng-model="newAddress.StreetNumber" name="streetnumber" id="streetnumber" placeholder="Street Number"
+                           validate-on="blur" required required-message="'Street Number is required'">
                 </div>
             </div>
             <div class="form-group">
-                <label for="email">Email address</label>
+                <label for="City">City</label>
                 <div class="form-group">
-                    <input type="email" class="form-control" ng-model="newCustomer.Email" id="email" name="email" placeholder="Email address"
+                    <input type="text" class="form-control" ng-model="newAddress.city" id="city" name="email" placeholder="City"
                            validate-on="blur" required required-message="'Email is required'">
                 </div>
             </div>
             <div class="form-group">
-                <label for="mobilePhone">Mobile phone</label>
+                <label for="postalCode">Postal Code</label>
                 <div class="form-group">
-                    <input type="text" ng-model="newCustomer.MobileNumber" class="form-control" id="mobilePhone" name="mobilePhone" placeholder="Mobile phone"
-                           validate-on="blur" required required-message="'Mobile phone is required'">
+                    <input type="text" ng-model="newAddress.postalCode" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code"
+                           validate-on="blur" required required-message="'Postal Code'">
                 </div>
             </div>
-            <input type="submit" name="submit" id="submit" value="Submit" ng-click="registerCustomer(newCustomer)"class="btn btn-info pull-right">
+
+            <input type="submit" name="submit" id="submit" value="Submit" ng-click="registerAddress(newAddress)"class="btn btn-info pull-right">
         </div>
     </form>
     <div class="col-sm-5 col-md-push-1">

@@ -1,9 +1,9 @@
 ﻿(function (app) {
     'use strict';
     app.controller('doorRegCtrl', doorRegCtrl);
-    doorRegCtrl.$inject = ['$scope', '$location', '$rootScope', '$timeout', 'apiService'];
+    doorRegCtrl.$inject = ['$scope', '$location', '$rootScope', 'apiService'];
 
-    function doorRegCtrl($scope, $location, $rootScope, $timeout, apiService) {
+    function doorRegCtrl($scope, $location, $rootScope, apiService) {
         $scope.newDoor = {};
         $scope.openDatePicker = openDatePicker;
         $scope.openDatePickerDOI = openDatePickerDOI;

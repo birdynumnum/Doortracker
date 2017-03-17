@@ -14,7 +14,10 @@
             errorMessages: ['Submition errors will appear here.']
         };
 
-       function registerAddress(newAddress) {
+        function registerAddress(newAddress) {
+
+            console.log("register");
+
             apiService.post('/api/address/put', $scope.newAddress,
             registerAddressSucceded,
             registerAddressFailed);

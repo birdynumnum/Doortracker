@@ -18,7 +18,6 @@ namespace WebAppDoorTracker.Controllers.API
     [RoutePrefix("api/address")]
     public class AddressController : ApiBaseController
     {
-
         private readonly IEntityBaseRepository<Address> _AddressRepository;
         List<anemicCustomerDTO> address_cus = null;
 
@@ -119,5 +118,35 @@ namespace WebAppDoorTracker.Controllers.API
                     return response = request.CreateResponse(HttpStatusCode.OK, address_cus);
                 });
         }
+
+
+        [HttpPost]
+        [Route("put")]
+        public HttpResponseMessage Put(HttpRequestMessage request, AddressDTO addressdto)
+        {
+            Address newAddress;
+
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+
+                if (!ModelState.IsValid)
+                {
+                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+
+                    newAddress = new Address(addressdto.StreetName, addressdto.StreetNumber, addressdto.City, addressdto.PostalCode);
+                    _AddressRepository.Add(newAddress);
+                    _UnitOfWork.Commit();
+
+                    addressdto = Mapper.Map<Address, AddressDTO>(newAddress);
+                }
+
+                return response = request.CreateResponse<AddressDTO>(HttpStatusCode.Created, addressdto);
+            });
+        }
+
     }
 }
