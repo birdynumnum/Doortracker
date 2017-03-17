@@ -26,11 +26,11 @@
                         <div class="col-xs-6">
                             <label class="control-label" for="dateOfInstallation">Installation Date</label>
                             <p class="input-group">
-                                <input type="text" class="form-control" name="dateOfInstallation" uib-datepicker-popup="{{format}}" ng-model="EditedDoor.dateOfInstallation" is-open="datepickerdoi.opened"
+                                <input type="text" class="form-control" name="dateOfInstallation" uib-datepicker-popup="{{format}}" ng-model="EditedDoor.dateOfInstallation" is-open="datepicker2.opened"
                                        datepicker-options="dateOptions" ng-required="true" datepicker-append-to-body="true" close-text="Close"
                                        validate-on="blur" />
                                 <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default" ng-click="openDatePickerInstallation($event, 'datepickerdoi')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    <button type="button" class="btn btn-default" ng-click="openDatePickerInstallation($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                                 </span>
                             </p>
                         </div>

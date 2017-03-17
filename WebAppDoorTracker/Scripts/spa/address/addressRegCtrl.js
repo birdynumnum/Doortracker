@@ -15,9 +15,6 @@
         };
 
         function registerAddress(newAddress) {
-
-            console.log("register");
-
             apiService.post('/api/address/put', $scope.newAddress,
             registerAddressSucceded,
             registerAddressFailed);
